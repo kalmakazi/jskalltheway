@@ -1,21 +1,19 @@
-/*
- * HomePage
- *
- * This is the first thing users see of our App, at the '/' route
- *
- * NOTE: while this component should technically be a stateless functional
- * component (SFC), hot reloading does not currently support SFCs. If hot
- * reloading is not a neccessity for you then you can refactor it and remove
- * the linting exception.
- */
-
 import React from 'react';
 
-export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+import css from './HomePage.css';
 
+import placeholder from './placeholder.jpeg';
+
+const HomePage = React.createClass({
   render() {
     return (
-      <h1>This is the Homepage!</h1>
+      <div className={css.image}>
+        <div>
+          Coming soon...
+        </div>
+      </div>
     );
-  }
-}
+  },
+});
+
+export default HomePage;

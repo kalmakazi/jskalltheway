@@ -1,0 +1,15 @@
+.image {
+  background: url('https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/1466280_10100187892024709_8892790764912471045_n.jpg?oh=270830c9df8ad217a2a76ae3fd9265e2&oe=582FEFB1') no-repeat center center fixed;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;;
+  justify-content: center;
+  color: white;
+  padding: 40px;
+  font-size: 30px;
+}

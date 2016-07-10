@@ -1,7 +1,7 @@
 import React from 'react';
-import Confetti from 'react-confetti'
+import Confetti from 'react-confetti';
 
-import {SpotifyPlayer} from './SpotifyPlayer';
+import { SpotifyPlayer } from './SpotifyPlayer';
 
 import css from './HomePage.css'; // eslint-disable-line import/no-unresolved
 
@@ -19,12 +19,6 @@ const HomePage = React.createClass({ // eslint-disable-line
     this.spotify = new SpotifyPlayer();
   },
 
-  toggleParty() {
-    this.setState({
-      partyMode: !this.state.partyMode,
-    })
-  },
-
   componentWillUpdate(nextProps, nextState) {
     if (nextState.partyMode) {
       this.spotify.start();
@@ -37,15 +31,21 @@ const HomePage = React.createClass({ // eslint-disable-line
     this.spotify.stop();
   },
 
+  toggleParty() {
+    this.setState({
+      partyMode: !this.state.partyMode,
+    });
+  },
+
   render() {
     return (
       <div className={css.image}>
         <div className={css.comingSoon}>
-          Coming soon...
+          Coming soon
         </div>
         <div className={css.party} onClick={this.toggleParty}>
           {this.state.partyMode ? 'I need a breather!' : 'Let’s party!'}
-          {this.state.partyMode && <Confetti gravity={.15} numberOfPieces={275} />}
+          {this.state.partyMode && <Confetti gravity={0.15} numberOfPieces={275} />}
         </div>
       </div>
     );

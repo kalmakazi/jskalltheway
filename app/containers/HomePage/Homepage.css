@@ -1,15 +1,24 @@
 .image {
-  align-items: flex-end;
+  align-items: center;
   background: url('https://scontent-iad3-1.xx.fbcdn.net/t31.0-8/13416990_10153719690518997_837766182030929514_o.jpg') no-repeat center center fixed;
   background-size: cover;
   bottom: 0;
   color: white;
   display: flex;
   font-size: 30px;
-  justify-content: center;
+  justify-content: space-between;
+  flex-direction: column;
   left: 0;
-  padding: 40px;
   position: fixed;
   right: 0;
   top: 0;
+}
+
+.comingSoon,
+.party {
+  padding: 40px;
+}
+
+.party {
+  cursor: pointer;
 }

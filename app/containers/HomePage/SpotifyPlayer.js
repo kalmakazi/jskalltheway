@@ -88,6 +88,8 @@ class SpotifyPlayer {
     if (fadeIn) {
       audio.volume = 0; // eslint-disable-line no-param-reassign
       this.fadeIn(audio);
+    } else {
+      audio.volume = 1; // eslint-disable-line no-param-reassign
     }
 
     audio.play();
@@ -104,12 +106,18 @@ class SpotifyPlayer {
 
   stop() {
     const audio = this.audioObjs[PLAYLIST[this.playlistIndex]];
-    audio.pause();
-    audio.currentTime = 0;
+    if (audio) {
+      audio.pause();
+      audio.volume = 0; // eslint-disable-line no-param-reassign
+      audio.currentTime = 0; // eslint-disable-line no-param-reassign
+    }
 
     this.timeouts.map(clearTimeout);
     this.intervals.map(clearInterval);
     this.playlistIndex = -1;
+
+    this.timeouts = [];
+    this.intervals = [];
   }
 }
 

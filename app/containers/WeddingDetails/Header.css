@@ -1,0 +1,56 @@
+.header {
+  align-items: center;
+  color: #211A1D;
+  justify-content: space-between;
+  display: flex;
+  font-family: 'Nixie One', cursive;
+  padding: 0 30px;
+  letter-spacing: 0.5px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #C3C9C3;
+  height: 100px;
+  background-color: #FFF;
+  z-index: 100;
+}
+
+.headerBuffer {
+  height: 100px;
+}
+
+.plus {
+  color: #BF1619;
+  font-size: 13px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.5;
+  position: relative;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+}
+
+.link {
+  cursor: pointer;
+  transition: color 100ms ease-in;
+}
+
+.link:hover {
+  color: #BF1619;
+}
+
+.link + .link {
+  margin-left: 30px;
+}

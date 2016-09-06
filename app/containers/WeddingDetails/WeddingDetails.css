@@ -1,0 +1,84 @@
+html {
+  background-color: #FFF;
+}
+
+.weddingDetails {
+  font-family: 'Nixie One', cursive;
+}
+
+p {
+  margin: 0;
+}
+
+.section {
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 30px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section + .section::before {
+  border-top: 1px solid #C3C9C3;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  max-width: 50%;
+  top: 0;
+  margin: 0 auto;
+}
+
+.title,
+.heroTitle {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.eventTitle {
+  margin: 20px 0 0;
+}
+
+.mapContainer {
+  height: 300px;
+  width: 100vw;
+}
+
+.pin {
+  display: inline-block;
+  font-size: 14px;
+  width: 100px;
+  text-align: center;
+}
+
+.heart {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 30px;
+}
+
+.heart::before,
+.heart::after {
+  position: absolute;
+  content: '';
+  left: 20px;
+  top: 0;
+  width: 20px;
+  height: 33px;
+  background: #BF1619;
+  border-radius: 20px 20px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}

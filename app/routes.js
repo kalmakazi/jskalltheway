@@ -33,7 +33,25 @@ export default function createRoutes() {
 
         importModules.catch(errorLoading);
       },
-    }, {
+    },
+    {
+      path: '/wip',
+      name: 'Work in progress',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/WeddingDetails'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    },
+    {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

@@ -12,6 +12,10 @@ const loadModule = (cb) => (componentModule) => {
   cb(null, componentModule.default);
 };
 
+
+import {Accommodations, Registry, Travel} from 'containers/Site';
+
+
 export default function createRoutes() {
   // Create reusable async injectors using getAsyncInjectors factory
   // const { injectReducer, injectSagas } = getAsyncInjectors(store);
@@ -36,6 +40,44 @@ export default function createRoutes() {
     },
     {
       path: '/wip',
+      name: 'Work in progress',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/Site'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    },
+    {
+      path: '/wip/registry',
+      name: 'Work in progress',
+      getComponent(nextState, cb) {
+        cb(null, Registry);
+      },
+    },
+    {
+      path: '/wip/accommodations',
+      name: 'Work in progress',
+      getComponent(nextState, cb) {
+        cb(null, Accommodations);
+      },
+    },
+    {
+      path: '/wip/travel',
+      name: 'Work in progress',
+      getComponent(nextState, cb) {
+        cb(null, Travel);
+      },
+    },
+    {
+      path: '/wip2',
       name: 'Work in progress',
       getComponent(nextState, cb) {
         const importModules = Promise.all([

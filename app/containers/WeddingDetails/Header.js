@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Heart from 'containers/shared/Heart';
+
 import css from './Header.css';
 
 const Link = React.createClass({ // eslint-disable-line
@@ -31,12 +33,10 @@ const Header = React.createClass({ // eslint-disable-line
       <div>
         <header className={css.header}>
           <div className={css.logo}>
-            <div>Jennifer</div>
-            <div className={css.plus}>&</div>
-            <div>Stephen</div>
+            Jennifer and Stephen
           </div>
           <nav className={css.nav}>
-            <Link scrollToRef={this.props.scrollToRef} refName="events">Events</Link>
+            <Link scrollToRef={this.props.scrollToRef} refName="ceremony">Ceremony and reception</Link>
             <Link scrollToRef={this.props.scrollToRef} refName="accommodations">Accommodations</Link>
             <Link scrollToRef={this.props.scrollToRef} refName="registry">Registry</Link>
           </nav>

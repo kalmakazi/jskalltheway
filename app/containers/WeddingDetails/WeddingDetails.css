@@ -12,8 +12,7 @@ p {
 
 .section {
   font-weight: 300;
-  margin: 0 auto;
-  max-width: 800px;
+  margin: 140px auto;
   padding: 30px;
   position: relative;
   text-align: center;
@@ -22,22 +21,58 @@ p {
   justify-content: center;
 }
 
-.section + .section::before {
-  border-top: 1px solid #C3C9C3;
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  max-width: 50%;
-  top: 0;
-  margin: 0 auto;
+.hero {
+  color: #fff;
+  display: flex;
+  height: 100vh;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  max-height: 700px;
 }
 
-.title,
+.heroText {
+  padding: 70px;
+  width: 100%;
+}
+
+/*.hands {*/
+  /*background: url('./pics/hand-hold.jpg') no-repeat;*/
+  /*background-position: 50% 0%;*/
+/*}*/
+
+/*.cas {*/
+  /*background: url('./pics/so-cas.jpg') no-repeat;*/
+  /*background-position: 50% 0%;*/
+/*}*/
+
+/*.garage {*/
+  /*background: url('./pics/garage2.jpg') no-repeat;*/
+  /*background-position: 50% 0%;*/
+/*}*/
+
+/*.lookback {*/
+  /*background: url('./pics/look-back.jpg') no-repeat;*/
+  /*background-position: 50% 0%;*/
+/*}*/
+
 .heroTitle {
-  font-size: 30px;
+  font-size: 80px;
+  font-family: 'Monsieur La Doulaise', cursive;
+  margin-bottom: -25px;
+}
+
+.heroSubtitle {
+  font-size: 20px;
+  font-weight: lighter;
+  color: white;
+}
+
+.title {
+  font-size: 80px;
+  font-family: 'Monsieur La Doulaise', cursive;
   font-weight: 400;
-  margin: 0;
+  margin: 0 0 50px;
 }
 
 .eventTitle {
@@ -46,7 +81,20 @@ p {
 
 .mapContainer {
   height: 300px;
-  width: 100vw;
+}
+
+.column {
+  display: inline-block;
+  vertical-align: middle;
+  width: 400px;
+}
+
+.column + .column {
+  margin-left: 50px;
+}
+
+.column p + p {
+  margin-top: 20px;
 }
 
 .pin {
@@ -56,29 +104,19 @@ p {
   text-align: center;
 }
 
-.heart {
-  display: inline-block;
-  position: relative;
-  width: 40px;
-  height: 30px;
+.link {
+  color: black;
 }
 
-.heart::before,
-.heart::after {
-  position: absolute;
-  content: '';
-  left: 20px;
-  top: 0;
-  width: 20px;
-  height: 33px;
-  background: #BF1619;
-  border-radius: 20px 20px 0 0;
-  transform: rotate(-45deg);
-  transform-origin: 0 100%;
+.logoWrapper {
+  border: 1px solid black;
+  display: inline-flex;
+  height: 120px;
+  width: 400px;
+  align-items: center;
+  justify-content: center;
 }
 
-.heart::after {
-  left: 0;
-  transform: rotate(45deg);
-  transform-origin: 100% 100%;
+.logo {
+  width: 300px;
 }
